@@ -14,6 +14,7 @@ from langchain.tools import (
     WikipediaQueryRun,
 )
 from langchain.utilities import WikipediaAPIWrapper
+import matplotlib
 import os
 import pandas as pd
 import requests
@@ -22,7 +23,7 @@ import wikipedia as wk
 
 OPENAI_API_KEY = os.environ["OPENAI_API_KEY"]
 WIKIPEDIA_MAX_QUERY_LENGTH = 300
-
+matplotlib.use("agg")
 
 def create_folder_if_not_exists(folder_path):
     if not os.path.exists(folder_path):
@@ -34,13 +35,16 @@ def create_folder_if_not_exists(folder_path):
 
 def create_graph(csv_file_name: str, pandas_agent_query: str) -> str:
     """Creates an AI pandas agent to read the given csv file and create graphs using the data inside.
-    The query should be a plain english description of the data you wish to retrieve and what to do with it. 
+    Be specific about the data and the visualistion you want.
+    The query should be a plain english description of the data you wish to retrieve and what to do with it.
+    You do not need to ask the agent to read the CSV file, it is done automatically.
+    You should always ask the agent to SAVE the created graph.
+    You might consider using the show_image tool subsequent to this tool.
     The result is returned or an error message if something went wrong."""
-
     try:
         pandas_agent = create_csv_agent(
             OpenAI(temperature=0),
-            os.getcwd() + "\\ai_written_files" + "\\" + csv_file_name,
+            os.path.join(os.getcwd(), "ai_written_files", csv_file_name),
             verbose=True,
         )
     except:
