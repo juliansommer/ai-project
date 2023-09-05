@@ -14,15 +14,12 @@ from langchain.tools import (
     WikipediaQueryRun,
 )
 from langchain.utilities import WikipediaAPIWrapper
-import matplotlib
 import os
 import pandas as pd
 import requests
 
 
 OPENAI_API_KEY = os.environ["OPENAI_API_KEY"]
-WIKIPEDIA_MAX_QUERY_LENGTH = 300
-matplotlib.use("agg")
 
 
 def create_folder_if_not_exists(folder_path):
