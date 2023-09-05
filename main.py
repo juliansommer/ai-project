@@ -61,7 +61,8 @@ def wikipedia_table(link):
 
 def write_to_file(file_name: str, file_content: str) -> bool:
     """Writes file_contents to a new file with the given file name.
-    Ensure that the data being saved is only what is necessary to create the graph so only include the data points for each axis
+    Ensure that the data being saved is only what is necessary to create the graph.
+    This means only including the data points for each axis
     Returns a boolean indicating success (True) or failure (False)"""
     try:
         with open(os.path.join(os.getcwd(), "ai_written_files", file_name), "w", newline="", encoding="utf-8") as f:
