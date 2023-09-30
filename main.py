@@ -21,7 +21,6 @@ import requests
 
 OPENAI_API_KEY = os.environ["OPENAI_API_KEY"]
 
-
 def create_folder_if_not_exists(folder_path):
     if not os.path.exists(folder_path):
         try:
@@ -32,7 +31,7 @@ def create_folder_if_not_exists(folder_path):
 
 def create_graph(csv_file_name: str, pandas_agent_query: str) -> str:
     """Creates an AI pandas agent to read the given csv file and create graphs using the data inside.
-    Be specific about the data and the visualistion you want.
+    Be specific about the data and the visualisation you want.
     The query should be a plain english description of the data you wish to retrieve and what to do with it.
     You do not need to ask the agent to read the CSV file, it is done automatically.
     You should always ask the agent to SAVE the created graph.
@@ -53,7 +52,7 @@ def wikipedia_table(link):
     soup = BeautifulSoup(res.content,'lxml')
     table=soup.find_all('table',{'class':"wikitable"})
     df = pd.read_html(str(table))
-    return(df) 
+    return(df)
 
 
 def write_to_file(file_name: str, file_content: str) -> bool:
@@ -103,7 +102,7 @@ def start():
 
     agent = initialize_agent(
         tools,
-        ChatOpenAI(temperature=0, streaming=True, model="gpt-4"), 
+        ChatOpenAI(temperature=0, streaming=True, model="gpt-4"),
         agent=AgentType.STRUCTURED_CHAT_ZERO_SHOT_REACT_DESCRIPTION,
         verbose=True,
     )
