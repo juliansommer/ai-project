@@ -1,23 +1,14 @@
 from bs4 import BeautifulSoup
 import chainlit as cl
 from langchain import OpenAI, LLMMathChain
-from langchain.agents import (
-    create_csv_agent,
-    initialize_agent,
-    Tool,
-)
+from langchain.agents import create_csv_agent, initialize_agent, Tool
 from langchain.agents.agent_types import AgentType
 from langchain.chat_models import ChatOpenAI
-from langchain.tools import (
-    DuckDuckGoSearchRun,
-    StructuredTool,
-    WikipediaQueryRun,
-)
+from langchain.tools import DuckDuckGoSearchRun, StructuredTool, WikipediaQueryRun
 from langchain.utilities import WikipediaAPIWrapper
 import os
 import pandas as pd
 import requests
-
 
 OPENAI_API_KEY = os.environ["OPENAI_API_KEY"]
 
