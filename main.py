@@ -25,7 +25,7 @@ def create_graph(csv_file_name: str, pandas_agent_query: str) -> str:
     Be specific about the data and the visualisation you want.
     The query should be a plain english description of the data you wish to retrieve and what to do with it.
     You do not need to ask the agent to read the CSV file, it is done automatically.
-    You should always ask the agent to SAVE the created graph.
+    You should always ask the agent to save the created graph.
     The agent does not return true if it is complete so if there is no error assume the output file has been created"""
     try:
         pandas_agent = create_csv_agent(
@@ -85,7 +85,7 @@ def start():
         Tool(
             name="Wikipedia Table",
             func=wikipedia_table,
-            description="Useful for specifically gathering tables from a wikipedia page. Will need to call the function with the link to the wikipedia page you would like to get the table from. Accepts a single string as input.",
+            description="Useful for specifically gathering tables from a wikipedia page. Will need to call the function with the link to the Wikipedia page you would like to get the table from. Accepts a single string as input.",
         ),
         StructuredTool.from_function(create_graph),
         StructuredTool.from_function(write_to_file),
