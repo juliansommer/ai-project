@@ -34,7 +34,7 @@ def create_graph(csv_file_name: str, pandas_agent_query: str) -> str:
                 verbose=True,
             )
     except:
-        return "ERROR: Something went wrong when creating the CSV agent. Check the CSV file exists!"
+        return "Error: Something went wrong when creating the CSV agent. Check the CSV file exists!"
     return pandas_agent.run(pandas_agent_query)
 
 
@@ -70,22 +70,22 @@ def start():
         Tool(
             name="Calculator",
             func=llm_math_chain.run,
-            description="useful for when you need to answer questions about math. Accepts a single string as input.",
+            description="Useful for when you need to answer questions about math. Accepts a single string as input.",
         ),
         Tool(
             name="Search",
             func=search.run,
-            description="useful for when you need to answer questions about current events. You should ask targeted questions. Accepts a single string as input",
+            description="Useful for when you need to answer questions about current events. You should ask targeted questions. Accepts a single string as input",
         ),
         Tool(
             name="Wikipedia",
             func=wikipedia.run,
-            description="useful for gathering information about anything. data retrieved will also need to be trimmed. Accepts a single string as input.",
+            description="Useful for gathering information about anything. Data retrieved will also need to be trimmed. Accepts a single string as input.",
         ),
         Tool(
             name="Wikipedia Table",
             func=wikipedia_table,
-            description="useful for specifically gathering tables from a wikipedia page. will need to call the function with the link to the wikipedia page you would like to get the table from. Accepts a single string as input.",
+            description="Useful for specifically gathering tables from a wikipedia page. Will need to call the function with the link to the wikipedia page you would like to get the table from. Accepts a single string as input.",
         ),
         StructuredTool.from_function(create_graph),
         StructuredTool.from_function(write_to_file),
