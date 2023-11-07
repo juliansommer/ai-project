@@ -50,6 +50,3 @@ Even fresh installs of Langchain can miss some imports. To ensure you have all t
 ```bash
 pip install --upgrade langchain
 ```
-
-You're now ready to start your project, scrape data from Wikipedia, and create insightful graphs using the above libraries.
-```
