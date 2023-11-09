@@ -18,7 +18,7 @@ To get started with this project, you'll need to install the following Python pa
   pip install chainlit
   ```
 
-  - [DuckDuckGo Search](https://pypi.org/project/duckduckgo-search/): A Python interface for searching on DuckDuckGo.
+- [DuckDuckGo Search](https://pypi.org/project/duckduckgo-search/): A Python interface for searching on DuckDuckGo.
 
   ```bash
   pip install duckduckgo-search
