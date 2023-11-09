@@ -18,28 +18,28 @@ To get started with this project, you'll need to install the following Python pa
   pip install chainlit
   ```
 
+  - [DuckDuckGo Search](https://pypi.org/project/duckduckgo-search/): A Python interface for searching on DuckDuckGo.
+
+  ```bash
+  pip install duckduckgo-search
+  ```
+
 - [Langchain](https://pypi.org/project/langchain/): A natural language processing library:
 
   ```bash
   pip install langchain
   ```
 
-- [DuckDuckGo Search](https://pypi.org/project/duckduckgo-search/): A Python interface for searching on DuckDuckGo.
+- [Pandas](https://pypi.org/project/pandas/): A data manipulation and analysis library.
 
   ```bash
-  pip install duckduckgo-search
+  pip install pandas
   ```
 
 - [Wikipedia](https://pypi.org/project/wikipedia/): A Python library for querying Wikipedia.
 
   ```bash
   pip install wikipedia
-  ```
-
-- [Pandas](https://pypi.org/project/pandas/): A data manipulation and analysis library.
-
-  ```bash
-  pip install pandas
   ```
 
 ### Note
