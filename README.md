@@ -18,10 +18,10 @@ To get started with this project, you'll need to install the following Python pa
   pip install chainlit
   ```
 
-- [Langchain](https://pypi.org/project/langchain/): A natural language processing library. You may need to install additional dependencies based on your requirements. To ensure you have the latest version, upgrade Langchain with the following command:
+- [Langchain](https://pypi.org/project/langchain/): A natural language processing library:
 
   ```bash
-  pip install --upgrade langchain
+  pip install langchain
   ```
 
 - [DuckDuckGo Search](https://pypi.org/project/duckduckgo-search/): A Python interface for searching on DuckDuckGo.
