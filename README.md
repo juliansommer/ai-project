@@ -1,4 +1,3 @@
-```markdown
 # Chainlit Project: Wikipedia Data Scraping and Graph Creation
 
 This project focuses on scraping data from Wikipedia and using it to create graphs.
