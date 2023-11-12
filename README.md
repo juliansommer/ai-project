@@ -19,7 +19,10 @@ Even fresh installs of Langchain can miss some imports. To ensure you have all t
 pip install --upgrade langchain
 ```
 
-Then in the folder
+### Running file
+
+In the folder
+
 ```bash
 chainlit run main.py
 ```
