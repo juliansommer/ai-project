@@ -1,14 +1,13 @@
 # Wikipedia Data Scraping and Graph Creation
 
-This project focuses on scraping data from Wikipedia and using it to create graphs.
+This project focuses on scraping data from Wikipedia and using it to create graphs. Due to number of changes made to langchain since creation, it is no longer function and requires most things to be rewritten.
 
 ## Installation Requirements
 
 To get started with this project, you'll need to install the following Python packages using `pip`:
 
-
 ```bash
-pip install beautifulsoup4, chainlit, duckduckgo-search, langchain, pandas, wikipedia
+pip install bs4, chainlit, duckduckgo-search, langchain, langchain_community, langchain_experimental, langchain_openai, pandas, wikipedia
 ```
 
 ### Note
@@ -24,5 +23,5 @@ pip install --upgrade langchain
 In the folder
 
 ```bash
-chainlit run main.py
+python -m chainlit run app.py
 ```

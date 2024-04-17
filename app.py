@@ -1,11 +1,13 @@
 from bs4 import BeautifulSoup
 import chainlit as cl
-from langchain import OpenAI, LLMMathChain
-from langchain.agents import create_csv_agent, initialize_agent, Tool
+from langchain.agents import initialize_agent, Tool
 from langchain.agents.agent_types import AgentType
-from langchain.chat_models import ChatOpenAI
-from langchain.tools import DuckDuckGoSearchRun, StructuredTool, WikipediaQueryRun
-from langchain.utilities import WikipediaAPIWrapper
+from langchain.chains import LLMMathChain
+from langchain_community.tools import DuckDuckGoSearchRun, WikipediaQueryRun
+from langchain_community.utilities import WikipediaAPIWrapper
+from langchain_experimental.agents import create_csv_agent
+from langchain_openai import OpenAI, ChatOpenAI
+from langchain.tools import StructuredTool
 import os
 import pandas as pd
 import requests
@@ -21,6 +23,12 @@ def create_folder_if_not_exists(folder_path):
 
 
 def create_graph(csv_file_name: str, pandas_agent_query: str) -> str:
+    """Creates an AI pandas agent to read the given csv file and create graphs using the data inside.
+    Be specific about the data and the visualisation you want.
+    The query should be a plain english description of the data you wish to retrieve and what to do with it.
+    You do not need to ask the agent to read the CSV file, it is done automatically.
+    You should always ask the agent to save the created graph.
+    The agent does not return true if it is complete so if there is no error assume the output file has been created"""
     try:
         pandas_agent = create_csv_agent(
                 OpenAI(temperature=0),
@@ -41,6 +49,10 @@ def wikipedia_table(link):
 
 
 def write_to_file(file_name: str, file_content: str) -> bool:
+    """Writes file_contents to a new file with the given file name.
+    Ensure that the data being saved is only what is necessary to create the graph.
+    This means only including the data points for each axis
+    Returns a boolean indicating success (True) or failure (False)"""
     try:
         with open(os.path.join(os.getcwd(), "ai_written_files", file_name), "w", newline="", encoding="utf-8") as f:
             f.write(file_content)
