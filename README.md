@@ -1,6 +1,6 @@
 # Wikipedia Data Scraping and Graph Creation
 
-This project focuses on scraping data from Wikipedia and using it to create graphs. Due to number of changes made to langchain since creation, it is no longer function and requires most things to be rewritten.
+This project was created as part of the 2023 Peregian Digital Hub Cadetship program. Due to number of changes made to langchain since creation, it is no longer function and requires most things to be rewritten.
 
 ## Installation Requirements
 
